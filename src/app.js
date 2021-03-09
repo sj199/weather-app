@@ -5,7 +5,7 @@ const geocode = require('./utils/geocode.js')
 const forecast = require('./utils/forecast')
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const publicDirPath = path.join(__dirname, '../public')
 const viewsDirPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -93,5 +93,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Weather app listening at http://localhost:${port}`)
 })
