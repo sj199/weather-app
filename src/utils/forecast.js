@@ -10,7 +10,7 @@ const forecast = (latitude, longitude, fnForecast) => {
         } else if (response.body.error) {
             fnForecast('Unable to get location')
         } else {
-            fnForecast(undefined, `It is currently ${response.body.current.temperature} degrees out. It feels like ${response.body.current.feelslike} degrees. It is ${response.body.current.weather_descriptions[0]}.`)
+            fnForecast(undefined, `It is currently ${response.body.current.temperature} degrees out. It feels like ${response.body.current.feelslike} degrees. It is ${response.body.current.weather_descriptions[0]}. The humidity is ${response.body.current.humidity}`)
         }
     })
 
